@@ -1,15 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useEffect } from 'react';
+import React from 'react';
 import PublicNavbar from '../components/navbar/public-navbar';
-import { useSelector } from 'react-redux';
 
 const LandingPage = () => {
-     const count = useSelector((state: any) => state.counter);
-
-     useEffect(() => {
-          console.log(count);
-     }, [count]);
-
      return (
           <React.Fragment>
                <PublicNavbar></PublicNavbar>

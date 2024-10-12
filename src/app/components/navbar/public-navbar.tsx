@@ -2,18 +2,16 @@
 import Link from 'next/link';
 import React from 'react';
 import styles from './public-navbar.module.scss';
-import { decrement, increment } from '@/redux/slices/counterSlice';
 import { useAppDispatch } from '@/redux/store/store';
+import { login } from '@/redux/slices/localAuthSlice';
+import StorageService from '@/shared/storage.service';
 
 const PublicNavbar = () => {
      const dispatch = useAppDispatch();
 
-     function login() {
-          dispatch(increment());
-     }
-
-     function signup() {
-          dispatch(decrement());
+     function onLoginButtonClick() {
+          StorageService.setIsLoggedInUser(true);
+          dispatch(login());
      }
 
      return (
@@ -27,7 +25,7 @@ const PublicNavbar = () => {
                               <div className={styles['right-section']}>
                                    <button
                                         onClick={() => {
-                                             login();
+                                             onLoginButtonClick();
                                         }}
                                         className="btn btn-sucess"
                                    >
