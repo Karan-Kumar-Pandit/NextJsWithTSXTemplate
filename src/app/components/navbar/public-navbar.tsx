@@ -5,12 +5,14 @@ import styles from './public-navbar.module.scss';
 import { useAppDispatch } from '@/redux/store/store';
 import { login } from '@/redux/slices/localAuthSlice';
 import StorageService from '@/shared/storage.service';
+// import Cookies from 'js-cookie';
 
 const PublicNavbar = () => {
      const dispatch = useAppDispatch();
 
      function onLoginButtonClick() {
           StorageService.setIsLoggedInUser(true);
+          // Cookies.set('token', 'SLFJDSRW23R20955IELMEO53905358353GLDGKDGE055855535FSGFSGSFSGS2242525375TKHOULF', { expires: 1 });
           dispatch(login());
      }
 
