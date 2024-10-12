@@ -2,14 +2,14 @@ import React, { ReactNode } from 'react';
 
 import SecureNavbar from '../secure-navbar/secure-navbar';
 import Sidebar from '../sidebar/sidebar';
-import styles from './custom-layout.module.scss';
+import styles from './main-layout.module.scss';
 interface LayoutProps {
      children: ReactNode;
 }
 
-const CustomLayout = ({ children }: LayoutProps) => {
+const MainLayout = ({ children }: LayoutProps) => {
      return (
-          <div className={styles['custom-layout']}>
+          <div className={styles['main-layout']}>
                <div className={styles['navbar']}>
                     <SecureNavbar />
                </div>
@@ -23,4 +23,4 @@ const CustomLayout = ({ children }: LayoutProps) => {
      );
 };
 
-export default CustomLayout;
+export default MainLayout;
