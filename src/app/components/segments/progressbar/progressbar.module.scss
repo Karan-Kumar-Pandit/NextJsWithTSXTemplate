@@ -1,0 +1,10 @@
+.progress-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+   
+    .progressbar {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+}

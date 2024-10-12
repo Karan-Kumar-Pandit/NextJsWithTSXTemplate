@@ -1,16 +1,16 @@
 // src/store/store.ts
 import { configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-import { counterReducer } from '../slices/counterSlice';
 import { localAuthReducer } from '../slices/localAuthSlice';
+import { blogReducer } from '../slices/blogSlice';
 
 // Create and configure the store
 
 export function makeStore(){
  return configureStore({
     reducer: {
-      counter: counterReducer,
       localAuth: localAuthReducer,
+      blogs: blogReducer,
     },
   });
 }

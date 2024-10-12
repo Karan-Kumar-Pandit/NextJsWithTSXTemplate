@@ -6,6 +6,7 @@ import Dashboard from './dashboard/page';
 import LandingPage from './landing/page';
 import { useSelector } from 'react-redux';
 import StorageService from '@/shared/storage.service';
+import CircularIndeterminate from './components/segments/progressbar/progressbar';
 
 export default function MyApp() {
      const [isLoading, setIsLoading] = useState(true);
@@ -30,7 +31,7 @@ export default function MyApp() {
           <React.Fragment>
                {isLoading && (
                     <React.Fragment>
-                         <b>Loading....</b>
+                         <CircularIndeterminate></CircularIndeterminate>
                     </React.Fragment>
                )}
                {!isLoading && (
