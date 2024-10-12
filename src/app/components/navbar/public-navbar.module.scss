@@ -1,0 +1,27 @@
+.public-navbar {
+    padding: 6px 20px;
+    background-color: bisque;
+
+    .left-and-right-section {
+        display: flex;
+        justify-content: space-between;
+
+        .left-section {
+            margin-top: auto;
+            margin-bottom: auto;
+
+            .title {
+                font-size: 20px;
+                font-weight: 600;
+                font-family: system-ui;
+            }
+        }
+
+        .right-section {
+            margin-top: auto;
+            margin-bottom: auto;
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}

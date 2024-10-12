@@ -1,0 +1,35 @@
+$sidebar-width: 250px;
+$navbar-height: 50px;
+
+.custom-layout {
+    margin: 0px;
+    padding: 0px;
+
+    .navbar {
+        top: 0px;
+        z-index: 10;
+        width: 100vw;
+        position: fixed;
+    }
+
+    .sidebar-and-child-layouts {
+        padding-top: $navbar-height;
+        display: flex;
+        justify-content: flex-start;
+
+        .sidebar {
+            width: $sidebar-width;
+            position: fixed;
+            top: $navbar-height;
+            height: calc(100vh - $navbar-height);
+            overflow: auto;
+            overflow-x: hidden;
+            background-color: #dcdcdc;
+        }
+
+        .child-layout {
+            margin-left: $sidebar-width;
+            width: calc(100vw - $sidebar-width);
+        }
+    }
+}
