@@ -5,7 +5,7 @@ import StorageService from './shared/storage.service';
 
 const protectedRoutes = ['/dashboard', '/blogs', '/profile', '/home'];
 
-export function middleware(req: NextRequest) {
+export function middleware(req: NextRequest, res: NextResponse) {
      const url = req.nextUrl.clone();
      const token = req.cookies.get('token')?.value;
 

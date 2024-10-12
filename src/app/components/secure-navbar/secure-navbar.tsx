@@ -6,13 +6,18 @@ import styles from './secure-navbar.module.scss';
 import { useAppDispatch } from '@/redux/store/store';
 import { logout } from '@/redux/slices/localAuthSlice';
 import StorageService from '@/shared/storage.service';
+import { setCookie } from 'typescript-cookie';
+import { useRouter } from 'next/navigation';
 
 const SecureNavbar = () => {
      const dispatch = useAppDispatch();
+     const router = useRouter();
 
      function onLogoutButtonClick() {
           StorageService.setIsLoggedInUser(false);
+          setCookie('token', null, { expires: 0 });
           dispatch(logout());
+          router.push('/');
      }
 
      return (
